@@ -1,0 +1,104 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{struggle}[2014/12/22 Struggle board generator]
+
+\RequirePackage{tikz}
+\RequirePackage{verbatim}
+\usetikzlibrary{arrows,shapes}
+
+
+
+
+
+
+
+\newenvironment{struggleboard}
+{ % before
+  \newcommand{\nodeaa}{(0 5.196152)}
+  \newcommand{\nodeba}{(-1/2 4.330127)}
+  \newcommand{\nodebb}{(1/2 4.330127)}
+  \newcommand{\nodeca}{(-1 3.4641016)}
+  \newcommand{\nodecb}{(0 3.4641016)}
+  \newcommand{\nodecc}{(1 3.4641016)}
+  \newcommand{\nodeda}{(-3/2 2.598076)}
+  \newcommand{\nodedb}{(-1/2 2.598076)}
+  \newcommand{\nodedc}{(1/2 2.598076)}
+  \newcommand{\nodedd}{(3/2 2.598076)}
+  \newcommand{\nodeea}{(-2 1.7320508)}
+  \newcommand{\nodeeb}{(-1 1.7320508)}
+  \newcommand{\nodeec}{(0 1.7320508)}
+  \newcommand{\nodeed}{(1 1.7320508)}
+  \newcommand{\nodeee}{(2 1.7320508)}
+  \newcommand{\nodefa}{(-5/2 0.8660254)}
+  \newcommand{\nodefb}{(-3/2 0.8660254)}
+  \newcommand{\nodefc}{(-1/2 0.8660254)}
+  \newcommand{\nodefd}{(1/2 0.8660254)}
+  \newcommand{\nodefe}{(3/2 0.8660254)}
+  \newcommand{\nodeff}{(5/2 0.8660254)}
+  \newcommand{\nodega}{(0 -5.196152)}
+  \newcommand{\nodegb}{(-1/2 -4.330127)}
+  \newcommand{\nodegc}{(1/2 -4.330127)}
+  \newcommand{\nodegd}{(-1 -3.4641016)}
+  \newcommand{\nodege}{(0 -3.4641016)}
+  \newcommand{\nodeha}{(1 -3.4641016)}
+  \newcommand{\nodehb}{(-3/2 -2.598076)}
+  \newcommand{\nodehc}{(-1/2 -2.598076)}
+  \newcommand{\nodehd}{(1/2 -2.598076)}
+  \newcommand{\nodehe}{(3/2 -2.598076)}
+  \newcommand{\nodehf}{(-2 -1.7320508)}
+  \newcommand{\nodeia}{(-1 -1.7320508)}
+  \newcommand{\nodeib}{(0 -1.7320508)}
+  \newcommand{\nodeic}{(1 -1.7320508)}
+  \newcommand{\nodeid}{(2 -1.7320508)}
+  \newcommand{\nodeie}{(-5/2 -0.8660254)}
+  \newcommand{\nodeja}{(-3/2 -0.8660254)}
+  \newcommand{\nodejb}{(-1/2 -0.8660254)}
+  \newcommand{\nodejc}{(1/2 -0.8660254)}
+  \newcommand{\nodejd}{(3/2 -0.8660254)}
+  \newcommand{\nodeka}{(5/2 -0.8660254)}
+  \newcommand{\nodekb}{(2 0.0)}
+  \newcommand{\nodekc}{(1 0.0)}
+  \newcommand{\nodela}{(0 0.0)}
+  \newcommand{\nodelb}{(-1 0.0)}
+  \newcommand{\nodema}{(-2 0.0)}
+
+  \newcommand{\ncolor}[2]{
+    \draw[fill=##2] ##1 circle (1);
+  }
+  \newcommand{\noutline}[2]{
+    \draw[style=thick, color=##2] ##1 circle (1);
+  }
+  
+
+  \begin{tikzpicture}
+    \draw (\nodeba) circle [radius=1];
+  \end{tikzpicture}
+
+  % draw the board
+%  \nodeaa
+  % \begin{comment}
+  %   \begin{tikzpicture}
+  %     \foreach \el in {
+  %       \nodeaa, \nodeba, \nodebb, \nodeca, \nodecb, \nodecc,
+  %       \nodeda, \nodedb, \nodedc, \nodedd, \nodeea, \nodeeb,
+  %       \nodeec, \nodeed, \nodeee, \nodefa, \nodefb, \nodefc,
+  %       \nodefd, \nodefe, \nodeff, \nodega, \nodegb, \nodegc,
+  %       \nodegd, \nodege, \nodeha, \nodehb, \nodehc, \nodehd,
+  %       \nodehe, \nodehf, \nodeia, \nodeib, \nodeic, \nodeid,
+  %       \nodeie, \nodeja, \nodejb, \nodejc, \nodejd, \nodeka,
+  %       \nodekb, \nodekc, \nodela, \nodelb, \nodema
+  %     }
+  %     {
+  %       \draw  (\el) circle [radius=1];
+  %     }
+      
+  %     \draw \nodekc circle [radius=1];
+      
+  %   \end{tikzpicture}
+  % \end{comment}
+}
+{ % after
+
+
+
+%  \end{tikzpicture}
+}

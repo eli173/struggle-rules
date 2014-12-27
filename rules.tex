@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{struggle}
+
+\newcommand{\sqrtthree}{(sqrt(3.0))}
+\newcommand{\testnode}{(6, 5.454323)}
+
+\begin{document}
+
+\sqrtthree
+
+before
+
+\begin{struggleboard}
+
+\end{struggleboard}
+
+after
+
+
+\begin{tikzpicture}
+  \tikzstyle{every node}=[draw,circle,fill=gray,minimum size=1pt];
+  \node (a) at (0, 0) {};
+  \node (b) at (1/2, 1.113) {};
+  \draw (4, 4.44) circle [radius=1];
+  \draw \testnode circle [radius=1];
+\end{tikzpicture}
+
+\end{document}

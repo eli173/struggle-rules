@@ -1,0 +1,587 @@
+; SLIME 2014-08-01
+CL-USER> (defvar format-string)
+FORMAT-STRING
+CL-USER> (setf format-string "\newcommand{~S}{~S}")
+"newcommand{~S}{~S}"
+CL-USER> format-string
+"newcommand{~S}{~S}"
+CL-USER> (format t "test: ~S" '( 22 . 33))
+test: (22 . 33)
+NIL
+CL-USER> (sb-posix:getcwd)
+"/home/eli173"
+CL-USER> (load "~/programming/lisp/drawers/drawers")
+To load "ltk":
+  Load 1 ASDF system:
+    ltk
+; Loading "ltk"
+
+
+; file: /home/eli173/programming/lisp/drawers/drawers.lisp
+; in: DEFUN BOARD-OVAL
+;     (DRAWERS::DRAW-BOARD DRAWERS::ORIGIN LTK:SCALE)
+; 
+; caught STYLE-WARNING:
+;   undefined function: DRAW-BOARD
+; 
+; compilation unit finished
+;   Undefined function:
+;     DRAW-BOARD
+;   caught 1 STYLE-WARNING condition
+
+; in: DEFUN DRAW-BOARD
+;     (DRAWERS::DRAW-TBOARD
+;      (DRAWERS::GET-TRANSFORM-BOARD DRAWERS::ORIGIN LTK:SCALE))
+; 
+; caught STYLE-WARNING:
+;   undefined function: DRAW-TBOARD
+
+;     (DRAWERS::GET-TRANSFORM-BOARD DRAWERS::ORIGIN LTK:SCALE)
+; 
+; caught STYLE-WARNING:
+;   undefined function: GET-TRANSFORM-BOARD
+; 
+; compilation unit finished
+;   Undefined functions:
+;     DRAW-TBOARD GET-TRANSFORM-BOARD
+;   caught 2 STYLE-WARNING conditions
+
+; in: DEFUN GET-TRANSFORM-BOARD
+;     (DRAWERS::GEN-BOARD)
+; 
+; caught STYLE-WARNING:
+;   undefined function: GEN-BOARD
+; 
+; compilation unit finished
+;   Undefined function:
+;     GEN-BOARD
+;   caught 1 STYLE-WARNING condition
+
+; in: DEFUN GEN-BOARD
+;     (DRAWERS::FLIP-ROW (DRAWERS::GEN-HALF 6 NIL))
+; 
+; caught STYLE-WARNING:
+;   undefined function: FLIP-ROW
+
+;     (DRAWERS::GEN-ROW DRAWERS::N)
+; 
+; caught STYLE-WARNING:
+;   undefined function: GEN-ROW
+; 
+; compilation unit finished
+;   Undefined functions:
+;     FLIP-ROW GEN-ROW
+;   caught 2 STYLE-WARNING conditions
+
+; in: DEFUN GEN-ROW
+;     (DRAWERS::BALANCE-LIST (DRAWERS::NUM-LIST DRAWERS::N))
+; 
+; caught STYLE-WARNING:
+;   undefined function: BALANCE-LIST
+
+;     (DRAWERS::NUM-LIST DRAWERS::N)
+; 
+; caught STYLE-WARNING:
+;   undefined function: NUM-LIST
+; 
+; compilation unit finished
+;   Undefined functions:
+;     BALANCE-LIST NUM-LIST
+;   caught 2 STYLE-WARNING conditions
+T
+CL-USER> (gen-board)
+
+; in: GEN-BOARD
+;     (GEN-BOARD)
+; 
+; caught STYLE-WARNING:
+;   undefined function: GEN-BOARD
+; 
+; compilation unit finished
+;   Undefined function:
+;     GEN-BOARD
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted on #<UNDEFINED-FUNCTION GEN-BOARD {1003519FB3}>.
+CL-USER> (in-package :drawers)
+#<PACKAGE "DRAWERS">
+DRAWERS> (gen-board)
+((0 . 5.196152) (-1/2 . 4.330127) (1/2 . 4.330127) (-1 . 3.4641016)
+ (0 . 3.4641016) (1 . 3.4641016) (-3/2 . 2.598076) (-1/2 . 2.598076)
+ (1/2 . 2.598076) (3/2 . 2.598076) (-2 . 1.7320508) (-1 . 1.7320508)
+ (0 . 1.7320508) (1 . 1.7320508) (2 . 1.7320508) (-5/2 . 0.8660254)
+ (-3/2 . 0.8660254) (-1/2 . 0.8660254) (1/2 . 0.8660254) (3/2 . 0.8660254)
+ (5/2 . 0.8660254) (0 . -5.196152) (-1/2 . -4.330127) (1/2 . -4.330127)
+ (-1 . -3.4641016) (0 . -3.4641016) (1 . -3.4641016) (-3/2 . -2.598076)
+ (-1/2 . -2.598076) (1/2 . -2.598076) (3/2 . -2.598076) (-2 . -1.7320508)
+ (-1 . -1.7320508) (0 . -1.7320508) (1 . -1.7320508) (2 . -1.7320508)
+ (-5/2 . -0.8660254) (-3/2 . -0.8660254) (-1/2 . -0.8660254) (1/2 . -0.8660254)
+ (3/2 . -0.8660254) (5/2 . -0.8660254) (2 . 0.0) (1 . 0.0) (0 . 0.0) (-1 . 0.0)
+ (-2 . 0.0))
+DRAWERS> (mapcar #'(lambda (cc) (cons (car cc) (cons (cdr cc) nil))) (gen-board))
+((0 5.196152) (-1/2 4.330127) (1/2 4.330127) (-1 3.4641016) (0 3.4641016)
+ (1 3.4641016) (-3/2 2.598076) (-1/2 2.598076) (1/2 2.598076) (3/2 2.598076)
+ (-2 1.7320508) (-1 1.7320508) (0 1.7320508) (1 1.7320508) (2 1.7320508)
+ (-5/2 0.8660254) (-3/2 0.8660254) (-1/2 0.8660254) (1/2 0.8660254)
+ (3/2 0.8660254) (5/2 0.8660254) (0 -5.196152) (-1/2 -4.330127) (1/2 -4.330127)
+ (-1 -3.4641016) (0 -3.4641016) (1 -3.4641016) (-3/2 -2.598076)
+ (-1/2 -2.598076) (1/2 -2.598076) (3/2 -2.598076) (-2 -1.7320508)
+ (-1 -1.7320508) (0 -1.7320508) (1 -1.7320508) (2 -1.7320508) (-5/2 -0.8660254)
+ (-3/2 -0.8660254) (-1/2 -0.8660254) (1/2 -0.8660254) (3/2 -0.8660254)
+ (5/2 -0.8660254) (2 0.0) (1 0.0) (0 0.0) (-1 0.0) (-2 0.0))
+DRAWERS> (defvar verts)
+VERTS
+DRAWERS> (setf verts '(
+		       "\a1"
+		       "\b1" "\b2"
+		       "\c1" "\c2" "\c3"
+		       "\d1" "\d2" "\d3" "\d4"
+		       "\e1" "\e2" "\e3" "\e4" "\e5"
+		       "\f1" "\f2" "\f3"
+		       "\f4" "\f5" "\f6"
+		       "\g1" "\g2" "\g3" "\g4" "\g5"
+		       "\h1" "\h2" "\h3"
+		       "\h4" "\h5" "\h6"
+		       "\i1" "\i2" "\i3" "\i4" "\i5"
+		       "\j1" "\j2" "\j3" "\j4"
+		       "\k1" "\k2" "\k3"
+		       "\l1" "\l2"
+		       "\m1"))
+("a1" "b1" "b2" "c1" "c2" "c3" "d1" "d2" "d3" "d4" "e1" "e2" "e3" "e4" "e5"
+ "f1" "f2" "f3" "f4" "f5" "f6" "g1" "g2" "g3" "g4" "g5" "h1" "h2" "h3" "h4"
+ "h5" "h6" "i1" "i2" "i3" "i4" "i5" "j1" "j2" "j3" "j4" "k1" "k2" "k3" "l1"
+ "l2" "m1")
+DRAWERS> (mapcar #'(lambda (cc) (cons (car cc) (cons (cdr cc) nil))) (gen-board))
+((0 5.196152) (-1/2 4.330127) (1/2 4.330127) (-1 3.4641016) (0 3.4641016)
+ (1 3.4641016) (-3/2 2.598076) (-1/2 2.598076) (1/2 2.598076) (3/2 2.598076)
+ (-2 1.7320508) (-1 1.7320508) (0 1.7320508) (1 1.7320508) (2 1.7320508)
+ (-5/2 0.8660254) (-3/2 0.8660254) (-1/2 0.8660254) (1/2 0.8660254)
+ (3/2 0.8660254) (5/2 0.8660254) (0 -5.196152) (-1/2 -4.330127) (1/2 -4.330127)
+ (-1 -3.4641016) (0 -3.4641016) (1 -3.4641016) (-3/2 -2.598076)
+ (-1/2 -2.598076) (1/2 -2.598076) (3/2 -2.598076) (-2 -1.7320508)
+ (-1 -1.7320508) (0 -1.7320508) (1 -1.7320508) (2 -1.7320508) (-5/2 -0.8660254)
+ (-3/2 -0.8660254) (-1/2 -0.8660254) (1/2 -0.8660254) (3/2 -0.8660254)
+ (5/2 -0.8660254) (2 0.0) (1 0.0) (0 0.0) (-1 0.0) (-2 0.0))
+DRAWERS> (defvar coords)
+COORDS
+DRAWERS> (setf coords (mapcar #'(lambda (cc) (cons (car cc) (cons (cdr cc) nil))) (gen-board)))
+((0 5.196152) (-1/2 4.330127) (1/2 4.330127) (-1 3.4641016) (0 3.4641016)
+ (1 3.4641016) (-3/2 2.598076) (-1/2 2.598076) (1/2 2.598076) (3/2 2.598076)
+ (-2 1.7320508) (-1 1.7320508) (0 1.7320508) (1 1.7320508) (2 1.7320508)
+ (-5/2 0.8660254) (-3/2 0.8660254) (-1/2 0.8660254) (1/2 0.8660254)
+ (3/2 0.8660254) (5/2 0.8660254) (0 -5.196152) (-1/2 -4.330127) (1/2 -4.330127)
+ (-1 -3.4641016) (0 -3.4641016) (1 -3.4641016) (-3/2 -2.598076)
+ (-1/2 -2.598076) (1/2 -2.598076) (3/2 -2.598076) (-2 -1.7320508)
+ (-1 -1.7320508) (0 -1.7320508) (1 -1.7320508) (2 -1.7320508) (-5/2 -0.8660254)
+ (-3/2 -0.8660254) (-1/2 -0.8660254) (1/2 -0.8660254) (3/2 -0.8660254)
+ (5/2 -0.8660254) (2 0.0) (1 0.0) (0 0.0) (-1 0.0) (-2 0.0))
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts coords)
+
+; in: MAPCAR #'(LAMBDA (V C) (FORMAT T FORMAT-STRING V C))
+;     (FORMAT T DRAWERS::FORMAT-STRING DRAWERS::V DRAWERS::C)
+; 
+; caught WARNING:
+;   undefined variable: FORMAT-STRING
+; 
+; compilation unit finished
+;   Undefined variable:
+;     FORMAT-STRING
+;   caught 1 WARNING condition
+; Evaluation aborted on #<UNBOUND-VARIABLE FORMAT-STRING {10044FC733}>.
+DRAWERS> format-string
+; Evaluation aborted on #<UNBOUND-VARIABLE FORMAT-STRING {10046C8B43}>.
+DRAWERS> (defvar format-string)
+FORMAT-STRING
+DRAWERS> (setf format-string "\newcommand{~S}{~S}")
+"newcommand{~S}{~S}"
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts coords)
+newcommand{"a1"}{(0 5.196152)}newcommand{"b1"}{(-1/2 4.330127)}newcommand{"b2"}{(1/2
+                                                                                 4.330127)}newcommand{"c1"}{(-1
+                                                                                                             3.4641016)}newcommand{"c2"}{(0
+                                                                                                                                          3.4641016)}newcommand{"c3"}{(1
+                                                                                                                                                                       3.4641016)}newcommand{"d1"}{(-3/2
+                                                                                                                                                                                                    2.598076)}newcommand{"d2"}{(-1/2
+                                                                                                                                                                                                                                2.598076)}newcommand{"d3"}{(1/2
+                                                                                                                                                                                                                                                            2.598076)}newcommand{"d4"}{(3/2
+                                                                                                                                                                                                                                                                                        2.598076)}newcommand{"e1"}{(-2
+                                                                                                                                                                                                                                                                                                                    1.7320508)}newcommand{"e2"}{(-1
+                                                                                                                                                                                                                                                                                                                                                 1.7320508)}newcommand{"e3"}{(0
+                                                                                                                                                                                                                                                                                                                                                                              1.7320508)}newcommand{"e4"}{(1
+                                                                                                                                                                                                                                                                                                                                                                                                           1.7320508)}newcommand{"e5"}{(2
+                                                                                                                                                                                                                                                                                                                                                                                                                                        1.7320508)}newcommand{"f1"}{(-5/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     0.8660254)}newcommand{"f2"}{(-3/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  0.8660254)}newcommand{"f3"}{(-1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               0.8660254)}newcommand{"f4"}{(1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            0.8660254)}newcommand{"f5"}{(3/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         0.8660254)}newcommand{"f6"}{(5/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      0.8660254)}newcommand{"g1"}{(0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -5.196152)}newcommand{"g2"}{(-1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -4.330127)}newcommand{"g3"}{(1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -4.330127)}newcommand{"g4"}{(-1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -3.4641016)}newcommand{"g5"}{(0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -3.4641016)}newcommand{"h1"}{(1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -3.4641016)}newcommand{"h2"}{(-3/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -2.598076)}newcommand{"h3"}{(-1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -2.598076)}newcommand{"h4"}{(1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              -2.598076)}newcommand{"h5"}{(3/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -2.598076)}newcommand{"h6"}{(-2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -1.7320508)}newcommand{"i1"}{(-1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -1.7320508)}newcommand{"i2"}{(0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -1.7320508)}newcommand{"i3"}{(1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -1.7320508)}newcommand{"i4"}{(2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -1.7320508)}newcommand{"i5"}{(-5/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              -0.8660254)}newcommand{"j1"}{(-3/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -0.8660254)}newcommand{"j2"}{(-1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -0.8660254)}newcommand{"j3"}{(1/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -0.8660254)}newcommand{"j4"}{(3/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -0.8660254)}newcommand{"k1"}{(5/2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -0.8660254)}newcommand{"k2"}{(2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  0.0)}newcommand{"k3"}{(1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         0.0)}newcommand{"l1"}{(0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                0.0)}newcommand{"l2"}{(-1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       0.0)}newcommand{"m1"}{(-2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              0.0)}
+(NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL)
+DRAWERS> format-string
+"newcommand{~S}{~S}"
+DRAWERS> (setf format-string "\newcommand{~S}{~S}~%")
+"newcommand{~S}{~S}~%"
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts coords)
+newcommand{"a1"}{(0 5.196152)}
+newcommand{"b1"}{(-1/2 4.330127)}
+newcommand{"b2"}{(1/2 4.330127)}
+newcommand{"c1"}{(-1 3.4641016)}
+newcommand{"c2"}{(0 3.4641016)}
+newcommand{"c3"}{(1 3.4641016)}
+newcommand{"d1"}{(-3/2 2.598076)}
+newcommand{"d2"}{(-1/2 2.598076)}
+newcommand{"d3"}{(1/2 2.598076)}
+newcommand{"d4"}{(3/2 2.598076)}
+newcommand{"e1"}{(-2 1.7320508)}
+newcommand{"e2"}{(-1 1.7320508)}
+newcommand{"e3"}{(0 1.7320508)}
+newcommand{"e4"}{(1 1.7320508)}
+newcommand{"e5"}{(2 1.7320508)}
+newcommand{"f1"}{(-5/2 0.8660254)}
+newcommand{"f2"}{(-3/2 0.8660254)}
+newcommand{"f3"}{(-1/2 0.8660254)}
+newcommand{"f4"}{(1/2 0.8660254)}
+newcommand{"f5"}{(3/2 0.8660254)}
+newcommand{"f6"}{(5/2 0.8660254)}
+newcommand{"g1"}{(0 -5.196152)}
+newcommand{"g2"}{(-1/2 -4.330127)}
+newcommand{"g3"}{(1/2 -4.330127)}
+newcommand{"g4"}{(-1 -3.4641016)}
+newcommand{"g5"}{(0 -3.4641016)}
+newcommand{"h1"}{(1 -3.4641016)}
+newcommand{"h2"}{(-3/2 -2.598076)}
+newcommand{"h3"}{(-1/2 -2.598076)}
+newcommand{"h4"}{(1/2 -2.598076)}
+newcommand{"h5"}{(3/2 -2.598076)}
+newcommand{"h6"}{(-2 -1.7320508)}
+newcommand{"i1"}{(-1 -1.7320508)}
+newcommand{"i2"}{(0 -1.7320508)}
+newcommand{"i3"}{(1 -1.7320508)}
+newcommand{"i4"}{(2 -1.7320508)}
+newcommand{"i5"}{(-5/2 -0.8660254)}
+newcommand{"j1"}{(-3/2 -0.8660254)}
+newcommand{"j2"}{(-1/2 -0.8660254)}
+newcommand{"j3"}{(1/2 -0.8660254)}
+newcommand{"j4"}{(3/2 -0.8660254)}
+newcommand{"k1"}{(5/2 -0.8660254)}
+newcommand{"k2"}{(2 0.0)}
+newcommand{"k3"}{(1 0.0)}
+newcommand{"l1"}{(0 0.0)}
+newcommand{"l2"}{(-1 0.0)}
+newcommand{"m1"}{(-2 0.0)}
+(NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL)
+DRAWERS> format-string
+"newcommand{~S}{~S}~%"
+DRAWERS> (setf format-string "\newcommand{~S}{~S}~%")
+"newcommand{~S}{~S}~%"
+DRAWERS> (setf format-string "\\newcommand{~S}{~S}~%")
+"\\newcommand{~S}{~S}~%"
+DRAWERS> (setf format-string "~\newcommand{~S}{~S}~%")
+"~newcommand{~S}{~S}~%"
+DRAWERS> (setf format-string "\\newcommand{~S}{~S}~%")
+"\\newcommand{~S}{~S}~%"
+DRAWERS> format-string
+"\\newcommand{~S}{~S}~%"
+DRAWERS> "test\\ing"
+"test\\ing"
+DRAWERS> "test\ing"
+"testing"
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts coords)
+\newcommand{"a1"}{(0 5.196152)}
+\newcommand{"b1"}{(-1/2 4.330127)}
+\newcommand{"b2"}{(1/2 4.330127)}
+\newcommand{"c1"}{(-1 3.4641016)}
+\newcommand{"c2"}{(0 3.4641016)}
+\newcommand{"c3"}{(1 3.4641016)}
+\newcommand{"d1"}{(-3/2 2.598076)}
+\newcommand{"d2"}{(-1/2 2.598076)}
+\newcommand{"d3"}{(1/2 2.598076)}
+\newcommand{"d4"}{(3/2 2.598076)}
+\newcommand{"e1"}{(-2 1.7320508)}
+\newcommand{"e2"}{(-1 1.7320508)}
+\newcommand{"e3"}{(0 1.7320508)}
+\newcommand{"e4"}{(1 1.7320508)}
+\newcommand{"e5"}{(2 1.7320508)}
+\newcommand{"f1"}{(-5/2 0.8660254)}
+\newcommand{"f2"}{(-3/2 0.8660254)}
+\newcommand{"f3"}{(-1/2 0.8660254)}
+\newcommand{"f4"}{(1/2 0.8660254)}
+\newcommand{"f5"}{(3/2 0.8660254)}
+\newcommand{"f6"}{(5/2 0.8660254)}
+\newcommand{"g1"}{(0 -5.196152)}
+\newcommand{"g2"}{(-1/2 -4.330127)}
+\newcommand{"g3"}{(1/2 -4.330127)}
+\newcommand{"g4"}{(-1 -3.4641016)}
+\newcommand{"g5"}{(0 -3.4641016)}
+\newcommand{"h1"}{(1 -3.4641016)}
+\newcommand{"h2"}{(-3/2 -2.598076)}
+\newcommand{"h3"}{(-1/2 -2.598076)}
+\newcommand{"h4"}{(1/2 -2.598076)}
+\newcommand{"h5"}{(3/2 -2.598076)}
+\newcommand{"h6"}{(-2 -1.7320508)}
+\newcommand{"i1"}{(-1 -1.7320508)}
+\newcommand{"i2"}{(0 -1.7320508)}
+\newcommand{"i3"}{(1 -1.7320508)}
+\newcommand{"i4"}{(2 -1.7320508)}
+\newcommand{"i5"}{(-5/2 -0.8660254)}
+\newcommand{"j1"}{(-3/2 -0.8660254)}
+\newcommand{"j2"}{(-1/2 -0.8660254)}
+\newcommand{"j3"}{(1/2 -0.8660254)}
+\newcommand{"j4"}{(3/2 -0.8660254)}
+\newcommand{"k1"}{(5/2 -0.8660254)}
+\newcommand{"k2"}{(2 0.0)}
+\newcommand{"k3"}{(1 0.0)}
+\newcommand{"l1"}{(0 0.0)}
+\newcommand{"l2"}{(-1 0.0)}
+\newcommand{"m1"}{(-2 0.0)}
+(NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL)
+DRAWERS> format-string
+"\\newcommand{~S}{~S}~%"
+DRAWERS> (format t "test:~A" "test")
+test:test
+NIL
+DRAWERS> (setf format-string "\\newcommand{~A}{~S}~%")
+"\\newcommand{~A}{~S}~%"
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts coords)
+\newcommand{a1}{(0 5.196152)}
+\newcommand{b1}{(-1/2 4.330127)}
+\newcommand{b2}{(1/2 4.330127)}
+\newcommand{c1}{(-1 3.4641016)}
+\newcommand{c2}{(0 3.4641016)}
+\newcommand{c3}{(1 3.4641016)}
+\newcommand{d1}{(-3/2 2.598076)}
+\newcommand{d2}{(-1/2 2.598076)}
+\newcommand{d3}{(1/2 2.598076)}
+\newcommand{d4}{(3/2 2.598076)}
+\newcommand{e1}{(-2 1.7320508)}
+\newcommand{e2}{(-1 1.7320508)}
+\newcommand{e3}{(0 1.7320508)}
+\newcommand{e4}{(1 1.7320508)}
+\newcommand{e5}{(2 1.7320508)}
+\newcommand{f1}{(-5/2 0.8660254)}
+\newcommand{f2}{(-3/2 0.8660254)}
+\newcommand{f3}{(-1/2 0.8660254)}
+\newcommand{f4}{(1/2 0.8660254)}
+\newcommand{f5}{(3/2 0.8660254)}
+\newcommand{f6}{(5/2 0.8660254)}
+\newcommand{g1}{(0 -5.196152)}
+\newcommand{g2}{(-1/2 -4.330127)}
+\newcommand{g3}{(1/2 -4.330127)}
+\newcommand{g4}{(-1 -3.4641016)}
+\newcommand{g5}{(0 -3.4641016)}
+\newcommand{h1}{(1 -3.4641016)}
+\newcommand{h2}{(-3/2 -2.598076)}
+\newcommand{h3}{(-1/2 -2.598076)}
+\newcommand{h4}{(1/2 -2.598076)}
+\newcommand{h5}{(3/2 -2.598076)}
+\newcommand{h6}{(-2 -1.7320508)}
+\newcommand{i1}{(-1 -1.7320508)}
+\newcommand{i2}{(0 -1.7320508)}
+\newcommand{i3}{(1 -1.7320508)}
+\newcommand{i4}{(2 -1.7320508)}
+\newcommand{i5}{(-5/2 -0.8660254)}
+\newcommand{j1}{(-3/2 -0.8660254)}
+\newcommand{j2}{(-1/2 -0.8660254)}
+\newcommand{j3}{(1/2 -0.8660254)}
+\newcommand{j4}{(3/2 -0.8660254)}
+\newcommand{k1}{(5/2 -0.8660254)}
+\newcommand{k2}{(2 0.0)}
+\newcommand{k3}{(1 0.0)}
+\newcommand{l1}{(0 0.0)}
+\newcommand{l2}{(-1 0.0)}
+\newcommand{m1}{(-2 0.0)}
+(NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL)
+DRAWERS> (append "3" "456")
+; Evaluation aborted on #<TYPE-ERROR expected-type: LIST datum: "3">.
+DRAWERS> (concat "3" "456")
+
+; in: CONCAT "3"
+;     (DRAWERS::CONCAT "3" "456")
+; 
+; caught STYLE-WARNING:
+;   undefined function: CONCAT
+; 
+; compilation unit finished
+;   Undefined function:
+;     CONCAT
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted on #<UNDEFINED-FUNCTION CONCAT {10054C3B83}>.
+DRAWERS> (concatenate "3" "456")
+; Evaluation aborted on #<TYPE-ERROR expected-type: (OR CONS SYMBOL SB-KERNEL:INSTANCE) datum: "3">.
+DRAWERS> (concatenate 'string "3" "456")
+; Evaluation aborted on #<TYPE-ERROR expected-type: (OR CONS SYMBOL SB-KERNEL:INSTANCE) datum: 3>.
+DRAWERS> (concatenate 'string "3" "456")
+"3456"
+DRAWERS> (defvar verts2)
+VERTS2
+DRAWERS> (setf verts2 (mapcar #'(lambda (s) (concatenate 'string "\\" s)) verts))
+("\\a1" "\\b1" "\\b2" "\\c1" "\\c2" "\\c3" "\\d1" "\\d2" "\\d3" "\\d4" "\\e1"
+ "\\e2" "\\e3" "\\e4" "\\e5" "\\f1" "\\f2" "\\f3" "\\f4" "\\f5" "\\f6" "\\g1"
+ "\\g2" "\\g3" "\\g4" "\\g5" "\\h1" "\\h2" "\\h3" "\\h4" "\\h5" "\\h6" "\\i1"
+ "\\i2" "\\i3" "\\i4" "\\i5" "\\j1" "\\j2" "\\j3" "\\j4" "\\k1" "\\k2" "\\k3"
+ "\\l1" "\\l2" "\\m1")
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts2 coords)
+\newcommand{\a1}{(0 5.196152)}
+\newcommand{\b1}{(-1/2 4.330127)}
+\newcommand{\b2}{(1/2 4.330127)}
+\newcommand{\c1}{(-1 3.4641016)}
+\newcommand{\c2}{(0 3.4641016)}
+\newcommand{\c3}{(1 3.4641016)}
+\newcommand{\d1}{(-3/2 2.598076)}
+\newcommand{\d2}{(-1/2 2.598076)}
+\newcommand{\d3}{(1/2 2.598076)}
+\newcommand{\d4}{(3/2 2.598076)}
+\newcommand{\e1}{(-2 1.7320508)}
+\newcommand{\e2}{(-1 1.7320508)}
+\newcommand{\e3}{(0 1.7320508)}
+\newcommand{\e4}{(1 1.7320508)}
+\newcommand{\e5}{(2 1.7320508)}
+\newcommand{\f1}{(-5/2 0.8660254)}
+\newcommand{\f2}{(-3/2 0.8660254)}
+\newcommand{\f3}{(-1/2 0.8660254)}
+\newcommand{\f4}{(1/2 0.8660254)}
+\newcommand{\f5}{(3/2 0.8660254)}
+\newcommand{\f6}{(5/2 0.8660254)}
+\newcommand{\g1}{(0 -5.196152)}
+\newcommand{\g2}{(-1/2 -4.330127)}
+\newcommand{\g3}{(1/2 -4.330127)}
+\newcommand{\g4}{(-1 -3.4641016)}
+\newcommand{\g5}{(0 -3.4641016)}
+\newcommand{\h1}{(1 -3.4641016)}
+\newcommand{\h2}{(-3/2 -2.598076)}
+\newcommand{\h3}{(-1/2 -2.598076)}
+\newcommand{\h4}{(1/2 -2.598076)}
+\newcommand{\h5}{(3/2 -2.598076)}
+\newcommand{\h6}{(-2 -1.7320508)}
+\newcommand{\i1}{(-1 -1.7320508)}
+\newcommand{\i2}{(0 -1.7320508)}
+\newcommand{\i3}{(1 -1.7320508)}
+\newcommand{\i4}{(2 -1.7320508)}
+\newcommand{\i5}{(-5/2 -0.8660254)}
+\newcommand{\j1}{(-3/2 -0.8660254)}
+\newcommand{\j2}{(-1/2 -0.8660254)}
+\newcommand{\j3}{(1/2 -0.8660254)}
+\newcommand{\j4}{(3/2 -0.8660254)}
+\newcommand{\k1}{(5/2 -0.8660254)}
+\newcommand{\k2}{(2 0.0)}
+\newcommand{\k3}{(1 0.0)}
+\newcommand{\l1}{(0 0.0)}
+\newcommand{\l2}{(-1 0.0)}
+\newcommand{\m1}{(-2 0.0)}
+(NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL)
+DRAWERS> (substitute "a" "1" "b1c1d1e1")
+"b1c1d1e1"
+DRAWERS> (substitute "1" "a" "b1c1d1e1")
+"b1c1d1e1"
+DRAWERS> #\a
+#\a
+DRAWERS> (substitute #\a #\1 "b1c1d1e1")
+"b1c1d1e1"
+DRAWERS> (substitute #\a #\1 "b1c1d1e1")
+"bacadaea"
+DRAWERS> verts2
+("\\a1" "\\b1" "\\b2" "\\c1" "\\c2" "\\c3" "\\d1" "\\d2" "\\d3" "\\d4" "\\e1"
+ "\\e2" "\\e3" "\\e4" "\\e5" "\\f1" "\\f2" "\\f3" "\\f4" "\\f5" "\\f6" "\\g1"
+ "\\g2" "\\g3" "\\g4" "\\g5" "\\h1" "\\h2" "\\h3" "\\h4" "\\h5" "\\h6" "\\i1"
+ "\\i2" "\\i3" "\\i4" "\\i5" "\\j1" "\\j2" "\\j3" "\\j4" "\\k1" "\\k2" "\\k3"
+ "\\l1" "\\l2" "\\m1")
+DRAWERS> (mapcar #'(lambda (v c)
+		     (format t format-string v c))
+		 verts2 coords)
+\newcommand{\a1}{(0 5.196152)}
+\newcommand{\b1}{(-1/2 4.330127)}
+\newcommand{\b2}{(1/2 4.330127)}
+\newcommand{\c1}{(-1 3.4641016)}
+\newcommand{\c2}{(0 3.4641016)}
+\newcommand{\c3}{(1 3.4641016)}
+\newcommand{\d1}{(-3/2 2.598076)}
+\newcommand{\d2}{(-1/2 2.598076)}
+\newcommand{\d3}{(1/2 2.598076)}
+\newcommand{\d4}{(3/2 2.598076)}
+\newcommand{\e1}{(-2 1.7320508)}
+\newcommand{\e2}{(-1 1.7320508)}
+\newcommand{\e3}{(0 1.7320508)}
+\newcommand{\e4}{(1 1.7320508)}
+\newcommand{\e5}{(2 1.7320508)}
+\newcommand{\f1}{(-5/2 0.8660254)}
+\newcommand{\f2}{(-3/2 0.8660254)}
+\newcommand{\f3}{(-1/2 0.8660254)}
+\newcommand{\f4}{(1/2 0.8660254)}
+\newcommand{\f5}{(3/2 0.8660254)}
+\newcommand{\f6}{(5/2 0.8660254)}
+\newcommand{\g1}{(0 -5.196152)}
+\newcommand{\g2}{(-1/2 -4.330127)}
+\newcommand{\g3}{(1/2 -4.330127)}
+\newcommand{\g4}{(-1 -3.4641016)}
+\newcommand{\g5}{(0 -3.4641016)}
+\newcommand{\h1}{(1 -3.4641016)}
+\newcommand{\h2}{(-3/2 -2.598076)}
+\newcommand{\h3}{(-1/2 -2.598076)}
+\newcommand{\h4}{(1/2 -2.598076)}
+\newcommand{\h5}{(3/2 -2.598076)}
+\newcommand{\h6}{(-2 -1.7320508)}
+\newcommand{\i1}{(-1 -1.7320508)}
+\newcommand{\i2}{(0 -1.7320508)}
+\newcommand{\i3}{(1 -1.7320508)}
+\newcommand{\i4}{(2 -1.7320508)}
+\newcommand{\i5}{(-5/2 -0.8660254)}
+\newcommand{\j1}{(-3/2 -0.8660254)}
+\newcommand{\j2}{(-1/2 -0.8660254)}
+\newcommand{\j3}{(1/2 -0.8660254)}
+\newcommand{\j4}{(3/2 -0.8660254)}
+\newcommand{\k1}{(5/2 -0.8660254)}
+\newcommand{\k2}{(2 0.0)}
+\newcommand{\k3}{(1 0.0)}
+\newcommand{\l1}{(0 0.0)}
+\newcommand{\l2}{(-1 0.0)}
+\newcommand{\m1}{(-2 0.0)}
+(NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL
+ NIL NIL NIL NIL NIL NIL NIL NIL NIL)
+DRAWERS> 
