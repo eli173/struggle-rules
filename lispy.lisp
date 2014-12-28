@@ -50,7 +50,7 @@
 
 (defvar format-string "\\newcommand{\\node~A}{~S}~%")
 
-(defvar format-string-2 "\node (~A) at ~S {};~%")
+(defvar format-string-2 "\\node (~A) at ~S {};~%")
 
 (defun get-commands ()
   (mapcar #'(lambda (v c)
