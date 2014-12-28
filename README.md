@@ -39,4 +39,4 @@ The nodes available to pass to the three commands above represent places on the 
 
 This would generate this image:
 
-![image not found...](https://url-added-later.com)
+![image not found...](https://raw.githubusercontent.com/eli173/struggle-rules/master/img.png)
