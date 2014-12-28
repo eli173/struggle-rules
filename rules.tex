@@ -10,20 +10,58 @@
 Designate a piece to use this power (traditionally blue).
 This piece treats the board as if it wraps around horizontally.
 That is, if the Torus piece is on the edge, it can move to the opposite edge of the same row, and can jump similarly.
-Further, when this piece encounters an edge moving forward, it may move as if it were in the opposite spot on its row (illustrated below).
+Further, when this piece encounters an edge moving forward, it may move forward as if it were in the opposite spot on its row (illustrated below).
 
-\begin{figure}[h]
-  \begin{struggleboard}{0.75}
-    \piece{i1}{blue};
-    \highlight{i2}{purple};
-    \highlight{h2}{purple};
-    \highlight{h1}{purple};
-    \highlight{i5}{purple};
-%    \highlight{i2}{purple};
-%    \highlight{i2}{purple};
-  \end{struggleboard}
-  \caption{The blue piece, our torus, may move to any place highlighted purple, with jumps indicated by arrows}
-\end{figure}
+\
 
+\begin{center}
+\begin{struggleboard}{0.5}
+  \piece{i1}{blue};
+  \highlight{i2}{purple};
+  \highlight{h2}{purple};
+  \highlight{h1}{purple};
+  \highlight{i5}{purple};
+  % \highlight{i2}{purple};
+  % \highlight{i2}{purple};
+\end{struggleboard}
+\begin{struggleboard}{0.5}
+  \piece{d1}{blue};
+  \piece{d4}{yellow};
+  \highlight{c1}{purple};
+  \highlight{d3}{purple};
+  \highlight{c3}{purple};
+\end{struggleboard}
+\begin{struggleboard}{0.5}
+  \piece{h1}{blue};
+  \highlight{g1}{purple};
+  \highlight{g5}{purple};
+  \highlight{h6}{purple};
+  \highlight{h2}{purple};
+\end{struggleboard}
+
+\
+
+\
+
+\begin{struggleboard}{0.5}
+  \piece{e5}{blue};
+  \piece{d1}{green};
+  \highlight{e1}{purple};
+  \highlight{e4}{purple};
+  \highlight{d4}{purple};
+  \highlight{c1}{purple};
+\end{struggleboard}
+\quad
+\begin{struggleboard}{0.5}
+  \piece{g5}{blue};
+  \piece{f2}{black};
+  \highlight{f1}{purple};
+  \highlight{e2}{purple};
+  \highlight{g1}{purple};
+  \highlight{g4}{purple};
+  \highlight{f5}{purple};
+  \highlight{f6}{purple};
+\end{struggleboard}
+\end{center}
 
 \end{document}
