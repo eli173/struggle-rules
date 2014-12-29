@@ -15,7 +15,7 @@ Further, when this piece encounters an edge moving forward, it may move forward 
 \
 
 \begin{center}
-\begin{struggleboard}{0.5}
+\begin{struggleboard}
   \piece{i1}{blue};
   \highlight{i2}{purple};
   \highlight{h2}{purple};
@@ -24,14 +24,14 @@ Further, when this piece encounters an edge moving forward, it may move forward 
   % \highlight{i2}{purple};
   % \highlight{i2}{purple};
 \end{struggleboard}
-\begin{struggleboard}{0.5}
+\begin{struggleboard}
   \piece{d1}{blue};
   \piece{d4}{yellow};
   \highlight{c1}{purple};
   \highlight{d3}{purple};
   \highlight{c3}{purple};
 \end{struggleboard}
-\begin{struggleboard}{0.5}
+\begin{struggleboard}
   \piece{h1}{blue};
   \highlight{g1}{purple};
   \highlight{g5}{purple};
@@ -52,7 +52,7 @@ Further, when this piece encounters an edge moving forward, it may move forward 
   \highlight{c1}{purple};
 \end{struggleboard}
 \quad
-\begin{struggleboard}{0.5}
+\begin{struggleboard}
   \piece{g5}{blue};
   \piece{f2}{black};
   \highlight{f1}{purple};
@@ -63,5 +63,44 @@ Further, when this piece encounters an edge moving forward, it may move forward 
   \highlight{f6}{purple};
 \end{struggleboard}
 \end{center}
+
+\newpage
+
+\subsection*{Caboose}
+
+If three or more of your nonwhite pieces line up in a row,
+you can use your turn to advance all the pieces one step in the direction of the line.
+
+\
+
+\begin{center}
+\begin{struggleboard}
+  \piece{h3}{red};
+  \piece{g3}{black};
+  \piece{f4}{blue};
+  \move{f4}{e4};
+  \move{g3}{f4};
+  \move{h3}{g3};
+\end{struggleboard}
+\begin{struggleboard}
+  \piece{i1}{red};
+  \piece{i2}{yellow};
+  \piece{i3}{green};
+  \move{i3}{i4};
+  \move{i2}{i3};
+  \move{i1}{i2};
+\end{struggleboard}
+\begin{struggleboard}
+  \piece{h5}{red};
+  \piece{g4}{green};
+  \piece{f4}{blue};
+  \piece{e3}{yellow};
+  \move{e3}{d2};
+  \move{f4}{e3};
+  \move{g4}{f4};
+  \move{h5}{g4};
+\end{struggleboard}
+\end{center}
+
 
 \end{document}
