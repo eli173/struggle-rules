@@ -9,7 +9,7 @@ Currently this file demonstrates how the boards generated from the LaTeX package
 ## struggle.sty
 This is the style file that provides board-drawing utilities. To use, just put this file in whichever directory you're compiling your LaTeX document from and add `\usepackage{struggle}` to the preamble.
 
-The package provides the `struggleboard` environment. When using this environment, you must pass a scaling factor as an argument. This environment places you in a Tikz environment, so you may put additional Tikz commands inside the environment. You do not need any Tikz knowledge to use this package though. The `struggleboard` environment provides three commands for drawing on the board:
+The package provides the `struggleboard` environment. When using this environment, you may pass a scaling factor as an argument. This environment places you in a Tikz environment, so you may put additional Tikz commands inside the environment. You do not need any Tikz knowledge to use this package though. The `struggleboard` environment provides three commands for drawing on the board:
 
 #### `\piece{node}{color}`
 This command takes a node and a color and places a piece on that node. All standard LaTeX colors are valid.
@@ -27,7 +27,7 @@ The nodes available to pass to the three commands above represent places on the 
 ### Example Code
 
 ```TeX
-\begin{struggleboard}{0.75}
+\begin{struggleboard}[0.75]
     \piece{e2}{yellow};
     \piece{f3}{green};
     \piece{g4}{white};
