@@ -29,6 +29,10 @@
     \draw[fill=##2] (##1) circle [radius=0.25];
   }
   \
+  \newcommand{\piecetext}[3]{ % piece, text, color
+    \node[draw=none,fill=none,color=##3] at (##1) {\scriptsize{##2}};
+  }
+  \
   \begin{tikzpicture}[scale=#1]
     \tikzstyle{every node}=[draw,fill=black,circle,inner sep=1]
     \node (a1) at (0, 5.196152) {};
