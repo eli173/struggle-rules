@@ -1,0 +1,69 @@
+\documentclass[../rulebook.tex]{subfiles}
+
+\begin{document}
+At the beginning of the game,
+designate one non-white piece with the ability to lay tumbling-towers.
+When this piece moves,
+it may leave the base of a tower in the space it just left.
+(For the pieces of the tower, use checkers, coins,
+or some other stackable object that can fit on one space.)
+The tower must be laid in the middle five rows.
+This tower may not be landed on by any piece,
+and may only be jumped over by your pieces.
+When one of your non-white pieces jumps over the tower,
+add one level to the tower
+(white may jump over the tower, but not add levels).
+The tower has a maximum height of three pieces.
+The range of the tower is the heigh of the tower minus one.
+That is, if the tower has 2 levels, its range is 1,
+and if it has 3 levels, its range is 2.
+When a non-white enemy piece lands within the tower's range
+(e.g. if the tower is 3 levels high, the piece lands within
+2 spaces of the tower),
+the tower 'falls' (is removed from the board)
+and all non-white enemy pieces in the tower's range
+are removed from the board. 
+You may have only 1 tower on the board at a time,
+but may lay as many as you like during the course of the game. 
+
+Below, the green is your piece which is allowed to lay tumbling tower,
+and the blue and yellow pieces are also yours.
+The red and black pieces belong to your opponent.
+The tumbling tower is denoted by a brown piece here.
+Your green begins by laying a tumbling tower, and as the moves progress,
+your opponent moves towards you and you add on to the tumbling tower.
+The range of the tower is marked by an orange highlight.
+Note that if an enemy piece is within the new range of the tumbling tower
+when you add to its range, the fall is not triggered, as the fall is
+only triggered by enemy movement within the range.
+
+\begin{center}
+% you move green
+  \begin{struggleboard}
+    \piece{i3}{green};
+    \piece{i4}{yellow};
+    \piece{j3}{blue};
+%    \piece
+    \move{i3}{h4};
+  \end{struggleboard}
+% opponent moves
+  \begin{struggleboard}
+    \piece{h4}{green};
+    \piece{i3}{brown};
+    \piece{i4}{yellow};
+    \piece{j3}{blue};
+  \end{struggleboard}
+% you jump the tt w/ yellow
+  \begin{struggleboard}
+    \piece{h4}{green};
+    \piece{i3}{brown};
+    \piece{i4}{yellow};
+    \piece{j3}{blue};
+    \move{i4}{i2};
+  \end{struggleboard}
+% opp move
+  \begin{struggleboard}
+    \piece{h4}{green};
+  \end{struggleboard}
+\end{center}
+\end{document}
