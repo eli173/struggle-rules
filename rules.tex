@@ -102,5 +102,62 @@ you can use your turn to advance all the pieces one step in the direction of the
 \end{struggleboard}
 \end{center}
 
+\newpage
+
+\subsection*{Teleporter}
+
+Choose a piece to be your teleporter (traditionally blue).
+This piece can move regularly, or it can use the power of teleportation.
+If the power is used, the teleporter may move to any open space not behind it within three spaces of itself.
+When the power is used, the pieces over which the teleporter moves are not considered jumped.
+
+Below, the blue piece is our teleporter, and all spaces he is able to move to are highlighted. The jumps drawn below indicate that the teleporter can also move regularly to these spots using the standard movement rules for jumping. A space is highlighted green if the piece can move there by means of teleporter, purple if the piece can move there by teleporting, and red if the piece can only reach the spot by moving regularly.
+
+\
+
+\begin{center}
+\begin{struggleboard}
+  \piece{h5}{blue};
+  \highlight{h6}{purple};
+  \highlight{h4}{purple};
+  \highlight{h3}{green};
+  \highlight{h2}{green};
+  \highlight{g2}{green};
+  \highlight{g3}{green};
+  \highlight{g4}{purple};
+  \highlight{g5}{purple};
+  \highlight{f3}{green};
+  \highlight{f4}{green};
+  \highlight{f5}{green};
+  \highlight{f6}{green};
+  \highlight{e3}{green};
+  \highlight{e4}{green};
+  \highlight{e5}{green};
+\end{struggleboard}
+\begin{struggleboard}
+  \piece{i2}{blue};
+  \piece{h3}{yellow};
+  \piece{f4}{green};
+  \piece{e3}{black};
+  \highlight{i1}{purple};
+  \highlight{i3}{purple};
+  \highlight{g3}{purple};
+  \highlight{h2}{purple};
+  \highlight{i4}{green};
+  \highlight{i5}{green};
+  \highlight{h1}{green};
+  \highlight{h4}{green};
+  \highlight{h5}{green};
+  \highlight{g1}{green};
+  \highlight{g2}{green};
+  \highlight{g4}{green};
+  \highlight{f1}{green};
+  \highlight{f2}{green};
+  \highlight{f3}{green};
+  \highlight{e4}{red};
+  \highlight{e2}{red};
+\end{struggleboard}
+\end{center}
+
 
 \end{document}
