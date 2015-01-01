@@ -2,9 +2,9 @@
  "torus"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("subfile" "rulebook.tex")))
+                     '(("subfiles" "rulebook.tex")))
    (TeX-run-style-hooks
     "latex2e"
-    "subfile"
-    "subfile10")))
+    "subfiles"
+    "subfiles10")))
 
