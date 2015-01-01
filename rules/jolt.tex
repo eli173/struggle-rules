@@ -1,0 +1,59 @@
+\documentclass[rulebook.tex]{subfiles}
+
+\begin{document}
+\subsection*{Jolt}
+
+Designate one piece to be your Jolt (traditionally yellow).
+When this piece jumps over any of your nonwhite pieces (`jolts' them,
+you can move the jumped-over piece using a standard move
+(that is, the piece may move normally except for that it is not
+allowed to use its power(s). If you jolt more than one piece,
+you may choose the order in which you move them.
+
+Below, the yellow is your jolt, the blue is your teleporter,
+and the red is also your piece.
+The green and the black belong to your opponent.
+
+\begin{center}
+  \begin{struggleboard}
+    \piece{j3}{yellow};
+    \piece{i3}{red};
+    \piece{h4}{blue};
+    \piece{g5}{black};
+    \piece{g3}{green};
+    \move{j3}{h3};
+    \move{h3}{h5};
+    \move{h5}{f6};
+  \end{struggleboard}
+  \begin{struggleboard}
+    \piece{f6}{yellow};
+    \piece{i3}{red};
+    \piece{h4}{blue};
+    \piece{g3}{green};
+    \move{i3}{g4};
+  \end{struggleboard}
+\end{center}
+\
+\begin{center}
+  \begin{struggleboard}
+    \piece{f6}{yellow};
+    \piece{g4}{red};
+    \piece{h4}{blue};
+    \piece{g3}{green};
+    \move{h4}{f3};
+  \end{struggleboard}
+  \begin{struggleboard}
+    \piece{f6}{yellow};
+    \piece{i3}{red};
+    \piece{f3}{blue};
+  \end{struggleboard}
+\end{center}
+
+\
+
+In the above, your jolt jumps your red, your blue,
+and your opponent's black. Then, since you jolted your
+red and your blue, you can move either or both of them.
+Here, you move your red first, and then you move your blue.
+
+\end{document}
