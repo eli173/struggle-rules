@@ -1,0 +1,70 @@
+\documentclass[rulebook.tex]{subfile}
+
+\begin{document}
+\subsection*{Grim Reaper}
+
+Choose one piece to be your Grim Reaper (traditionally black).
+When one of your non-Grim Reaper (and nonwhite) pieces is removed,
+the Grim Reaper moves to the spot where that piece was at the end of the turn. If multiple pieces of yours are removed on the same turn, the Grim Reaper goes to the place where the last piece to be removed was.
+In the case where multiple pieces are removed simultaneously,
+you may choose which piece the Grim Reaper will replace.
+
+Below, the black, red and blue pieces are yours,
+and the green is your opponent's.
+The images show the progression of a turn in which one of your pieces is captured.
+
+\
+
+\begin{center}
+  \begin{struggleboard}
+    \piece{g2}{red};
+    \piece{f2}{green};
+    \piece{f5}{black};
+    \piece{h4}{blue};
+    \move{f2}{h3};
+  \end{struggleboard}
+  \begin{struggleboard}
+    \piece{h3}{green};
+    \piece{f5}{black};
+    \piece{h4}{blue};
+    \move{f5}{g2};
+  \end{struggleboard}
+  \begin{struggleboard}
+    \piece{g2}{black};
+    \piece{h4}{blue};
+    \piece{h3}{green};
+  \end{struggleboard}
+\end{center}
+
+\
+
+In the above, the green takes your red, and when the turn finishes,
+your black moves to where your red was.
+
+\
+
+\begin{center}
+  \begin{struggleboard}
+    \piece{g2}{red};
+    \piece{f2}{green};
+    \piece{f5}{black};
+    \piece{h4}{blue};
+    \move{f2}{h3};
+    \move{h3}{h5};
+  \end{struggleboard}
+  \begin{struggleboard}
+    \piece{h5}{green};
+    \piece{f5}{black};
+    \move{f5}{h4};
+  \end{struggleboard}
+  \begin{struggleboard}
+    \piece{h4}{black};
+    \piece{h5}{green};
+  \end{struggleboard}
+\end{center}
+
+\
+
+Here, the enemy green captured your red and then your blue,
+so the black moves to where the last piece to be taken was.
+\end{document}
