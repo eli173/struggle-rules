@@ -47,31 +47,129 @@ only triggered by enemy movement within the range.
     \piece{i3}{green};
     \piece{i4}{yellow};
     \piece{j3}{blue};
-%    \piece
+    \piece{f2}{black};
+    \piece{e4}{red};
     \move{i3}{h4};
   \end{struggleboard}
 % opponent moves
   \begin{struggleboard}
     \piece{h4}{green};
     \piece{i3}{brown};
+    \piece{f2}{black};
+    \piece{e4}{red};
     \piece{i4}{yellow};
     \piece{j3}{blue};
+    \piecetext{i3}{$1$}{white};
+    \move{f2}{g2};
   \end{struggleboard}
 % you jump the tt w/ yellow
   \begin{struggleboard}
     \piece{h4}{green};
     \piece{i3}{brown};
+    \piece{g2}{black};
+    \piece{e4}{red};
     \piece{i4}{yellow};
     \piece{j3}{blue};
     \move{i4}{i2};
+    \piecetext{i3}{$1$}{white};
   \end{struggleboard}
+\end{center}
+
+\
+
+\
+
+\begin{center}
 % opp move
   \begin{struggleboard}
     \piece{h4}{green};
     \piece{i3}{brown};
+    \piece{e4}{red};
     \piece{j3}{blue};
+    \piece{g2}{black};
     \piece{i2}{yellow};
     \piecetext{i3}{$2$}{white};
+    \highlight{h3}{orange};
+    \highlight{i4}{orange};
+    \highlight{j2}{orange};
+    \move{e4}{f5};
+  \end{struggleboard}
+% blue adds to tt
+  \begin{struggleboard}
+    \piece{h4}{green};
+    \piece{f5}{red};
+    \piece{i3}{brown};
+    \piece{g2}{black};
+    \piece{j3}{blue};
+    \piece{i2}{yellow};
+    \highlight{h3}{orange};
+    \highlight{i4}{orange};
+    \highlight{j2}{orange};
+    \piecetext{i3}{$2$}{white};
+    \move{j3}{h3};
+  \end{struggleboard}
+% opp fells tt
+  \begin{struggleboard}
+    \piece{f5}{red};
+    \piece{h4}{green};
+    \piece{g2}{black};
+    \piece{i3}{brown};
+    \piece{h3}{blue};
+    \piece{i2}{yellow};
+    \highlight{j3}{orange};
+    \highlight{g3}{orange};
+    \highlight{h2}{orange};
+    \highlight{h5}{orange};
+    \highlight{i1}{orange};
+    \highlight{i5}{orange};
+    \highlight{j1}{orange};
+    \highlight{j4}{orange};
+    \highlight{k1}{orange};
+    \highlight{k2}{orange};
+    \highlight{k3}{orange};
+    \highlight{g4}{orange};
+    \highlight{i4}{orange};
+    \highlight{j2}{orange};
+    \piecetext{i3}{$3$}{white};
+    \move{f5}{g4};
+  \end{struggleboard}
+\end{center}
+
+\
+
+\
+
+\begin{center}
+  \begin{struggleboard}
+    \piece{g4}{red};
+    \piece{h4}{green};
+    \piece{g2}{black};
+    \piece{i3}{brown};
+    \piece{h3}{blue};
+    \piece{i2}{yellow};
+    \highlight{j3}{orange};
+    \highlight{g3}{orange};
+    \highlight{h2}{orange};
+    \highlight{h5}{orange};
+    \highlight{i1}{orange};
+    \highlight{i5}{orange};
+    \highlight{j1}{orange};
+    \highlight{j4}{orange};
+    \highlight{k1}{orange};
+    \highlight{k2}{orange};
+    \highlight{k3}{orange};
+    \highlight{i4}{orange};
+    \highlight{j2}{orange};
+    \piecetext{i3}{$3$}{white};
+  \end{struggleboard}
+  \begin{struggleboard}
+%    \piece{g4}{red};
+    \piece{h4}{green};
+%    \piece{g2}{black};
+%    \piece{i3}{brown};
+    \piece{h3}{blue};
+    \piece{i2}{yellow};
+%    \piecetext{i3}{$3$}{white};
   \end{struggleboard}
 \end{center}
 \end{document}
