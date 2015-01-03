@@ -5,20 +5,21 @@
 \subsection*{Overview and Objective}
 Each player has a team of 6 pieces of 6 different colors:
 white, black, blue, green, red, and yellow.
-Pieces move by moving to adjacent spaces or by jumping over other pieces;
+Pieces generally move by moving to adjacent spaces or by jumping over other pieces;
 enemy pieces are captured when they are jumped.
 A player wins in one of two circumstances:
-(1) he captures his opponent’s white,
-or (2) he moves his white across the board to his opponent’s
-white’s starting position. 
+\begin{itemize}\itemsep0pt
+\item he captures his opponent's white, or 
+\item he moves his white across the board to his opponent's white's starting position
+\end{itemize}
 
-Before play, each player chooses three different Rules
-from the Rules list.
+Before the game begins, each player chooses three different Rules
+from the Rule list.
 These Powers are used throughout the game to extend the abilities
-of single pieces or of the whole team. 
+of single pieces or of the whole team.
 
 \subsection*{Board and Setup}
-Struggle is played on a modified Chinese checkers board in which 4 of the 6 home-base triangles have been sectioned off, leaving a diamond-shaped Struggle board.  The first “layer” of the inner diamond and the last spaces on either side of the middle row are also sectioned off, so that the diamond’s sides are 6 spaces long.
+Struggle is played on a modified Chinese checkers board in which 4 of the 6 home-base triangles have been sectioned off, leaving a diamond-shaped Struggle board.  The first “layer” of the inner diamond and the last spaces on either side of the middle row are also sectioned off, so that the diamond's sides are 6 spaces long.
 
 
 Players set up pieces at either end of the diamond.
@@ -28,6 +29,27 @@ and the other five pieces are placed in the next two rows
 as the player wishes. (In competitive games, players may want to secretly
 decide on their starting positions and reveal them simultaneously.)
 
+An example starting board is pictured below.
+
+\begin{center}
+\begin{struggleboard}
+% p1
+  \piece{m1}{white};
+  \piece{l1}{blue};
+  \piece{l2}{red};
+  \piece{k1}{green};
+  \piece{k2}{yellow};
+  \piece{k3}{black};
+% p2
+  \piece{a1}{white};
+  \piece{b1}{black};
+  \piece{b2}{green};
+  \piece{c1}{yellow};
+  \piece{c2}{blue};
+  \piece{c3}{red};
+\end{struggleboard}
+\end{center}
+
 \subsection*{Movement and Capture}
 Players make 1 move per turn.
 Non-Rule (conventional) movement consists of either
@@ -35,8 +57,8 @@ Non-Rule (conventional) movement consists of either
 (2) jumping over an adjacent piece with an unoccupied
 space directly behind it, in the direction of the jump
 (as in checkers or Chinese checkers).
-A player may jump both his own and his opponent’s pieces:
-when an opponent’s piece is jumped, it is removed from the board
+A player may jump both his own and his opponent's pieces:
+when an opponent's piece is jumped, it is removed from the board
 unless a Power which says otherwise is invoked.
 
 Conventional movement cannot be backwards:
@@ -50,13 +72,13 @@ A piece which has just performed a conventional movement
 is said to be landing.
 
 \subsection*{The White Piece and Zapping}
-The game ends when either (1) one player’s white piece is captured or
-(2) one player’s white piece lands in the opponent’s
-white’s starting position.
+The game ends when either (1) one player's white piece is captured or
+(2) one player's white piece lands in the opponent's
+white's starting position.
 
-When a player’s white lands on the fourth row from his opponent
+When a player's white lands on the fourth row from his opponent
 (the 10th row from his perspective),
-any pieces in the opponent’s home base
+any pieces in the opponent's home base
 (the rows in which his pieces began) are immediately captured:
 they are said to be `zapped'.
 This is to guard against camping of the home base.
